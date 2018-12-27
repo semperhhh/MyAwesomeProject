@@ -5,10 +5,10 @@ import PerfectMySQL
 
 class SQLManage {
     
-    let SQLHost = "127.0.0.1"
+    let SQLHost = "39.96.82.100"
     let SQLUser = "root"
     let SQLPassword = "12345678"
-    let SQLDB = "BlogProject"
+    let SQLDB = "blog"
     
     var mysql : MySQL
     
