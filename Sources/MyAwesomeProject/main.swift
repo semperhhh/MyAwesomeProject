@@ -17,8 +17,11 @@ routes.add(method: .get, uri: "/") { (_, response) in
     response.completed()
 }
 
+//初始化数据库
+var mysql = SQLManage.init()
+
 do {
-    
+    server.addRoutes(routes)
     server.serverPort = 8181
     try server.start()
 }catch PerfectError.networkError(let err, let msg) {
