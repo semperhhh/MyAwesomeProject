@@ -11,10 +11,15 @@ server.documentRoot = "./webroot"
 
 var routes = Routes()
 
-routes.add(method: .get, uri: "/") { (_, response) in
-    response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html")
-    response.setBody(string: "91 test 91.com")
-    response.completed()
+//routes.add(method: .get, uri: "/") { (_, response) in
+//    response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html")
+//    response.setBody(string: "91 test 91.com")
+//    response.completed()
+//}
+
+routes.add(method: .get, uri: "/") { (request, response) in
+    StaticFileHandler(documentRoot: request.documentRoot, allowResponseFilters: true).handleRequest(request: request, response: response)
+//    response.completed()
 }
 
 //初始化数据库
