@@ -13,7 +13,7 @@ var routes = Routes()
 
 routes.add(method: .get, uri: "/") { (_, response) in
     response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html")
-    response.setBody(string: "body")
+    response.setBody(string: "91郭先生最新视频")
     response.completed()
 }
 
@@ -24,6 +24,7 @@ do {
     server.addRoutes(routes)
     server.serverPort = 8181
     try server.start()
+    
 }catch PerfectError.networkError(let err, let msg) {
     print("Network error thrown: \(err) \(msg)")
 }
