@@ -7,23 +7,32 @@ import PerfectMustache
 
 let server = HTTPServer()
 
-server.documentRoot = "./webroot"
+//根目录
+
+#if os(macOS)
+server.documentRoot = "/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace"
+#else //linux
+server.documentRoot = "Blog/MyAwesomeProject/Workspace"
+#endif
 
 var routes = Routes()
 
-//routes.add(method: .get, uri: "/") { (_, response) in
-//    response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html")
-//    response.setBody(string: "91 test 91.com")
-//    response.completed()
-//}
+routes.add(method: .get, uri: "/123") { (_, response) in
+    response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html;charset=UTF-8")
+    response.setBody(string: "test测试")
+    response.completed()
+}
 
 routes.add(method: .get, uri: "/") { (request, response) in
     StaticFileHandler(documentRoot: request.documentRoot, allowResponseFilters: true).handleRequest(request: request, response: response)
-//    response.completed()
 }
 
 //初始化数据库
 var mysql = SQLManage.init()
+
+//检测路径存在
+let thisDir = Dir("./webroot")
+print("路径 \(thisDir.exists)")
 
 do {
     server.addRoutes(routes)
