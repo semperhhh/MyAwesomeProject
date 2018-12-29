@@ -12,7 +12,7 @@ let server = HTTPServer()
 #if os(macOS)
 server.documentRoot = "/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace"
 #else //linux
-server.documentRoot = "Blog/MyAwesomeProject/Workspace"
+server.documentRoot = "~/Blog/MyAwesomeProject/Workspace"
 #endif
 
 var routes = Routes()
