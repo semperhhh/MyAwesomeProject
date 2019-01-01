@@ -17,18 +17,27 @@ server.documentRoot = "~/Blog/MyAwesomeProject/Workspace"
 
 var routes = Routes()
 
-routes.add(method: .get, uri: "/123") { (_, response) in
+routes.add(method: .get, uri: "/login/*/detail") { (resquest, response) in
     response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html;charset=UTF-8")
-    response.setBody(string: "test测试")
+    response.appendBody(string: "通配符url为 \(resquest.path)")
     response.completed()
 }
 
 routes.add(method: .get, uri: "/") { (request, response) in
-    StaticFileHandler(documentRoot: request.documentRoot, allowResponseFilters: true).handleRequest(request: request, response: response)
+
+    mustacheRequest(request: request, response: response, handler: storyHandler(), templatePath: request.documentRoot + "/index.html")
 }
 
-//初始化数据库
-var mysql = SQLManage.init()
+//通配符
+routes.add(method: .get, uri: "/*") { (request, response) in
+
+    //用文档根目录初始化静态文件句柄
+    let handler = StaticFileHandler(documentRoot: server.documentRoot + "/templates")
+
+    handler.handleRequest(request: request, response: response)
+}
+
+//结尾通配符
 
 //检测路径存在
 let thisDir = Dir("./webroot")

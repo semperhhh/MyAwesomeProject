@@ -1,0 +1,40 @@
+body.main_index {
+    background: url(../images/background.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+div.box {
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+.w {
+    width: 1510px;
+    margin: auto;
+}
+.navi {
+    background-color: white;
+    height: 64px;
+}
+.height-85 {
+    height: 85%;
+    min-height: 85%;
+    max-height: 85%;
+}
+div.col-center {
+    float:none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border-radius: 8px;
+    width: 600px;
+    height: 500px;
+}
+.col-md-12 {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
