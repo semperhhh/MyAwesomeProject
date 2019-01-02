@@ -23,19 +23,47 @@ routes.add(method: .get, uri: "/login/*/detail") { (resquest, response) in
     response.completed()
 }
 
-routes.add(method: .get, uri: "/") { (request, response) in
+//mustache基本用法
 
-    mustacheRequest(request: request, response: response, handler: storyHandler(), templatePath: request.documentRoot + "/index.html")
+
+//导航栏
+//let navResult = NavigationBarView().getTemplate()
+
+//首页
+let home = indexView().getTemplate()
+routes.add(method: .get, uri: "/") { (_, response) in
+    response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html;charset=UTF-8")
+    response.setBody(string: home)
+    response.completed()
 }
+
+//列表
+let list = ListView().getTemplate()
+routes.add(method: .get, uri: "/list") { (_, response) in
+    response.setBody(string: list)
+    response.completed()
+}
+
+////首页
+//routes.add(method: .get, uri: "/") { (request, response) in
+//
+//    mustacheRequest(request: request, response: response, handler: StoryHandler(), templatePath: server.documentRoot + "/index.html")
+//}
+
+//列表
+//routes.add(method: .get, uri: "/list.html") { (request, response) in
+//
+//    mustacheRequest(request: request, response: response, handler: ListHandler(), templatePath: server.documentRoot + "/templates/list.html")
+//}
 
 //通配符
-routes.add(method: .get, uri: "/*") { (request, response) in
-
-    //用文档根目录初始化静态文件句柄
-    let handler = StaticFileHandler(documentRoot: server.documentRoot + "/templates")
-
-    handler.handleRequest(request: request, response: response)
-}
+//routes.add(method: .get, uri: "/*") { (request, response) in
+//
+//    //用文档根目录初始化静态文件句柄
+//    let handler = StaticFileHandler(documentRoot: server.documentRoot + "/templates")
+//
+//    handler.handleRequest(request: request, response: response)
+//}
 
 //结尾通配符
 

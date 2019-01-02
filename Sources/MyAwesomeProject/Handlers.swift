@@ -24,8 +24,48 @@ struct MusHandler: MustachePageHandler {
     }
 }
 
-struct storyHandler: MustachePageHandler {
+//故事
+struct ListHandler: MustachePageHandler {
     
+    func extendValuesForResponse(context contxt: MustacheWebEvaluationContext, collector: MustacheEvaluationOutputCollector) {
+        
+        //初始化数据库
+        let mysql = DataBase()
+        
+        //查
+        var resultArray = [Dictionary<String,String>]()
+        let result = mysql.selectDataBaseWhere(tableName: "blog_home", keyWords: ["title","content"], keyValue: nil)
+        
+        if result.success {
+            
+            print("result success")
+            var dic = [String:String]()
+            
+            result.mysqlResult?.forEachRow(callback: { (row) in
+                dic["title"] = row[0]
+                dic["content"] = row[1]
+                resultArray.append(dic)
+            })
+        }
+        
+        var values = MustacheEvaluationContext.MapType()
+        values["title"] = resultArray
+        
+        contxt.extendValues(with: values)
+        
+        do {
+            try contxt.requestCompleted(withCollector: collector)
+        } catch {
+            let response = contxt.webResponse
+            response.status = .internalServerError
+            response.appendBody(string: "\(error)")
+            response.completed()
+        }
+    }
+}
+
+//列表
+struct StoryHandler: MustachePageHandler {
     func extendValuesForResponse(context contxt: MustacheWebEvaluationContext, collector: MustacheEvaluationOutputCollector) {
         
         //初始化数据库

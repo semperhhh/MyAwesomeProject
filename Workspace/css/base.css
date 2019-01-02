@@ -1,3 +1,7 @@
+
+li {
+    list-style: none;/*取消li的小点*/
+}
 body.main_index {
     background: url(../images/background.png);
     background-position: center top;
@@ -14,15 +18,27 @@ div.box {
     width: 1510px;
     margin: auto;
 }
+/* 导航栏 start*/
 .navi {
     background-color: white;
-    height: 64px;
+    height: 80px;
+    line-height: 80px;
 }
-.height-85 {
-    height: 85%;
-    min-height: 85%;
-    max-height: 85%;
+.naviBtn {
+    float: right;
+    margin-right: 60px;
 }
+.naviBtn li {
+    float: left;
+    margin-right: 20px;
+}
+a.navigation-title {
+    color: black;
+    font-size: 26px;
+    text-decoration: none;
+    margin-left: 100px;
+}
+/* navi end */
 div.col-center {
     float:none;
     display: block;
