@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>list</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/amazeui.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/amazeui.css">
 </head>
 <body class="main_index">
-    <div>{{{navigationBar}}}</div>
-    <div class="navi"></div>
-    
-</body>
+        <div class="box">
+            <!-- {{{navigationBar}}}  -->
+            <div class="navi">
+                    <a class="navigation-title" href="http://semperhhh.cn">semperhhhの博客</a>
+                    <div class="naviBtn">
+                        <ul>
+                            <li><a href="##" class="am-icon-btn am-icon-home"></a></li>
+                            <li><a href="##" class="am-icon-btn am-icon-list"></a></li>
+                            <li><a href="##" class="am-icon-btn am-icon-user"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+            <!-- list -->
+                {{#lists}}
+                <div class="list">{{title}}</div>
+                <div class="list">{{content}}</div>
+                {{/lists}}
+            <div></div>
+        </div>
+    </body>
 </html>

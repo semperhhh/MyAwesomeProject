@@ -8,7 +8,6 @@ import PerfectMustache
 let server = HTTPServer()
 
 //根目录
-
 #if os(macOS)
 server.documentRoot = "/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace"
 #else //linux
@@ -24,8 +23,6 @@ routes.add(method: .get, uri: "/login/*/detail") { (resquest, response) in
 }
 
 //mustache基本用法
-
-
 //导航栏
 //let navResult = NavigationBarView().getTemplate()
 

@@ -54,3 +54,10 @@ div.col-center {
     padding-right: 15px;
     padding-left: 15px;
 }
+
+/* list */
+.list {
+    background-color: brown;
+    width: 300px;
+    height: 300px;
+}
