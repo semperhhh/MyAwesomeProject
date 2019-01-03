@@ -32,12 +32,6 @@ div.box {
     float: left;
     margin-right: 20px;
 }
-a.navigation-title {
-    color: black;
-    font-size: 26px;
-    text-decoration: none;
-    margin-left: 100px;
-}
 /* navi end */
 div.col-center {
     float:none;
