@@ -45,6 +45,7 @@ class ListView: ZPMustacheUtily {
     override var mapParam: [String : Any]? {
         
         return ["navigationBar":NavigationBarView.html,
+                "WEBSITE_HOST":WEBSITE_HOST,
         ]
     }
 }
