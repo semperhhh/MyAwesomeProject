@@ -14,22 +14,23 @@ div.box {
     min-height: 100%;
     max-height: 100%;
 }
-.w {
-    width: 1510px;
-    margin: auto;
+img.head{
+	width: 128px;
+	height: 128px;
+	min-height: 128px;
+	max-height: 128px;
+}
+.img-circle{
+    border-radius: 50%;
+}
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* 导航栏 start*/
-.navi {
-    background-color: white;
-    height: 80px;
-    line-height: 80px;
-}
 .naviBtn {
     float: right;
-    margin-right: 60px;
-}
-.naviBtn li {
-    float: left;
     margin-right: 20px;
 }
 /* navi end */
@@ -43,15 +44,8 @@ div.col-center {
     width: 600px;
     height: 500px;
 }
-.col-md-12 {
-    position: relative;
-    padding-right: 15px;
-    padding-left: 15px;
-}
 
 /* list */
 .list {
-    background-color: brown;
-    width: 300px;
-    height: 300px;
+    background-color: white;    
 }

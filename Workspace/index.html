@@ -8,35 +8,39 @@
     <title>semperhhhの博客</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- 首页 -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <!-- 我的 -->
     <link rel="stylesheet" href="css/base.css">
+    <style>
+        p.text {
+            color: black;
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <body class="main_index">
     <div class="box">
-        <!-- {{{navigationBar}}}  -->
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <div>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        {{{navigationBar}}} 
 
         <div class="col-md-12" style="min-height: 800px;">
-            <div style="height: 160px;"></div>
-            <div class="col-center">{{title}}</div>
-            <div>{{name}}</div>
+            <div class="col-md-12 column">
+                <div style="height:160px;"></div>
+                <div class="col-md-5 col-center corner-window shadow" style="width: 600px">
+                    <div style="height:80px;"></div>
+                    <img class="head img-circle center-block" src="images/head.jpg">
+                    <p class="text text-center">semperhhh</p>
+                    <p class="text text-center">iOS</p>
+                    <hr style="background-color: white"/>
+                    <h1 class="text-center title">
+                            <a href="http://39.96.82.100:8181/list" class="button">查看文章</a>
+                            <br>
+                        </h1>
+                </div>
+            </div>
         </div>
+    
     </div>
 
 </body>
