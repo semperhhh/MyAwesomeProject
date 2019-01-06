@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="../css/buttons.css">
     <!-- 只有使用字体图标时才需要加载 Font-Awesome -->
     <link rel="stylesheet" href="../css/font-awesome.min.css">
-
+    <style>
+        p.title {
+            font-size: 22px;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body class="main_index">
@@ -27,9 +32,15 @@
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="container-fluid col-md-8">
                         {{#lists}}
-                    <div class="col-md-12 list">
-                        <div class="col-md-12">{{title}}</div>
-                        <div class="col-md-12">{{content}}</div>
+                    <div class="col-md-12 corner-window cell" onclick="location='http://www.baidu.com'">
+                        <div class="col-md-12" style="height:16px;"></div>
+                        <div class="col-md-12">
+                            <p class="title">{{title}} 测试测试流测试测试流测试测试流测试测试流测试测试流测试测试流测试测试流测试测试流测试测试流测试测试流</p>
+                            <p style="font-size:14px;">
+                                <i>最后修改于 :</i>
+                            </p>
+                        </div>
+                        <div class="col-md-12" style="height:16px;"></div>
                     </div>
                     <div class="col-md-12" style="height:16px;"></div>
                     {{/lists}}

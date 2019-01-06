@@ -13,7 +13,7 @@ class ListView: ZPMustacheUtily {
         
         //查
         var resultArray = [Dictionary<String,String>]()
-        let result = mysql.selectDataBaseWhere(tableName: "blog_home", keyWords: ["title","content"], keyValue: nil)
+        let result = mysql.selectDataBaseWhere(tableName: "BLOG_POSTSLIST", keyWords: ["id","PID","TITLE","DATE","LOVE","TAG","READED"], keyValue: nil)
         
         if result.success {//查找成功
             
@@ -21,8 +21,8 @@ class ListView: ZPMustacheUtily {
             var dic = [String:String]()
             
             result.mysqlResult?.forEachRow(callback: { (row) in
-                dic["title"] = row[0]
-                dic["content"] = row[1]
+                dic["id"] = row[1]
+                dic["title"] = row[2]
                 resultArray.append(dic)
             })
             
