@@ -2,7 +2,7 @@
 class NavigationBarView: ZPMustacheUtily {
     
     override var templateName: String? {
-        return "templates/navigationBar.html"
+        return "\(TEMPLATES)/navigationBar.html"
     }
     
     override var mapParam: [String : Any]? {

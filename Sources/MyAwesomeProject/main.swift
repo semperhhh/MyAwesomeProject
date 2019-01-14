@@ -4,6 +4,7 @@ import PerfectLib
 import PerfectHTTP
 import PerfectHTTPServer
 import PerfectMustache
+import PerfectMarkdown
 
 let server = HTTPServer()
 
@@ -13,6 +14,9 @@ server.documentRoot = "/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace"
 #else //linux
 server.documentRoot = "~/Blog/MyAwesomeProject/Workspace"
 #endif
+
+//markdown转html
+MarkHTML().markWithHTML(markFile: "test1", htmlFile: "190110")
 
 var routes = Routes()
 
@@ -38,6 +42,17 @@ routes.add(method: .get, uri: "/") { (_, response) in
 let list = ListView().getTemplate()
 routes.add(method: .get, uri: "/list") { (_, response) in
     response.setBody(string: list)
+    response.completed()
+}
+
+//帖子页
+let pid = "key"
+routes.add(method: .get, uri: "/posts/{\(pid)}") { (request, response) in
+    
+    let fileName = request.urlVariables[pid]!
+    print("fileName pid = \(fileName)")
+    let postsString = PostsView(pid: Int(fileName) ?? 0).getTemplate()
+    response.appendBody(string: postsString)
     response.completed()
 }
 

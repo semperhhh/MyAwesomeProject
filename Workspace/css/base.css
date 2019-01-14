@@ -58,4 +58,6 @@ div.col-center {
     height: 500px;
 }
 
-
+div.postsBackground {
+    background-color: white;
+}

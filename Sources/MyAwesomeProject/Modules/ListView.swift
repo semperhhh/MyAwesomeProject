@@ -21,8 +21,8 @@ class ListView: ZPMustacheUtily {
             var dic = [String:String]()
             
             result.mysqlResult?.forEachRow(callback: { (row) in
-                dic["id"] = row[1]
                 dic["title"] = row[2]
+                dic["WEBSITE_PID"] = row[1]//pid
                 resultArray.append(dic)
             })
             

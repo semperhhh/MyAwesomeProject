@@ -56,6 +56,8 @@ class DataBase {
         
         SQLString.append("from \(tableName)")
         
+        SQLString.append(" order by id desc")//倒序
+        
         //没有查到库
         guard mysql.selectDatabase(named: SQLDB) else {
             let msg = "no \(SQLDB) Database"
