@@ -34,7 +34,7 @@ struct ListHandler: MustachePageHandler {
         
         //查
         var resultArray = [Dictionary<String,String>]()
-        let result = mysql.selectDataBaseWhere(tableName: "blog_home", keyWords: ["title","content"], keyValue: nil)
+        let result = mysql.selectDataBaseWhere(keyWords: ["title","content"], keyValue: nil)
         
         if result.success {
             
@@ -73,7 +73,7 @@ struct StoryHandler: MustachePageHandler {
         
         //查
         var resultArray = [Dictionary<String,String>]()
-        let result = mysql.selectDataBaseWhere(tableName: "blog_home", keyWords: ["title","content"], keyValue: nil)
+        let result = mysql.selectDataBaseWhere(keyWords: ["title","content"], keyValue: nil)
         
         if result.success {
             

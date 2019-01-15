@@ -16,7 +16,7 @@ server.documentRoot = "~/Blog/MyAwesomeProject/Workspace"
 #endif
 
 //markdown转html
-MarkHTML().markWithHTML(markFile: "test1", htmlFile: "190110")
+MarkHTML().markWithHTML(markFile: "test3", htmlFile: "190116")
 
 var routes = Routes()
 
@@ -39,8 +39,8 @@ routes.add(method: .get, uri: "/") { (_, response) in
 }
 
 //列表
-let list = ListView().getTemplate()
 routes.add(method: .get, uri: "/list") { (_, response) in
+    let list = ListView().getTemplate()
     response.setBody(string: list)
     response.completed()
 }

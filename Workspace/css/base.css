@@ -46,6 +46,9 @@ div.cell:hover {
     float: right;
     margin-right: 15px;
 }
+.naviHeight {
+    line-height: 1.5;
+}
 /* navi end */
 div.col-center {
     float:none;
