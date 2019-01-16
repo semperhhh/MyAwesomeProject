@@ -22,7 +22,7 @@ class DataBase {
     
     internal init() {
         
-        tableName = "BLOG_POSTSLIST"
+        tableName = "postslist"
         
         mysql = MySQL()
         

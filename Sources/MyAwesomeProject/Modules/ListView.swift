@@ -17,7 +17,7 @@ class ListView: ZPMustacheUtily {
         //查
         var resultArray = [Dictionary<String,String>]()
         var resultModelArray = [ZPModel]()
-        let result = mysql.selectDataBaseWhere(keyWords: ["id","PID","TITLE","DATE","LOVE","TAG","READED","update_time"], keyValue: nil)
+        let result = mysql.selectDataBaseWhere(keyWords: ["id","title","pid"], keyValue: nil)
         
         if result.success {//查找成功
             
@@ -25,11 +25,10 @@ class ListView: ZPMustacheUtily {
             var dic = [String:String]()
             
             result.mysqlResult?.forEachRow(callback: { (row) in
-                dic["title"] = String.init(row[2]!)
-                dic["WEBSITE_PID"] = row[1]//pid
-                dic["update_time"] = row[7]//最后更新时间
+                dic["title"] = String.init(row[1]!)
+                dic["WEBSITE_PID"] = row[2]//pid
                 print("title = \(dic["title"] ?? "")")
-                let model = ZPModel(title: row[2], pid: Int(row[1]!), id: Int(row[0]!))
+                let model = ZPModel(title: row[1], pid: Int(row[2]!), id: Int(row[0]!))
                 resultModelArray.append(model)
                 resultArray.append(dic)
             })
