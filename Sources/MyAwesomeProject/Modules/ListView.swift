@@ -25,7 +25,7 @@ class ListView: ZPMustacheUtily {
             var dic = [String:String]()
             
             result.mysqlResult?.forEachRow(callback: { (row) in
-                dic["title"] = String("123违法就")
+                dic["title"] = String.init(row[2]!)
                 dic["WEBSITE_PID"] = row[1]//pid
                 dic["update_time"] = row[7]//最后更新时间
                 print("title = \(dic["title"] ?? "")")
