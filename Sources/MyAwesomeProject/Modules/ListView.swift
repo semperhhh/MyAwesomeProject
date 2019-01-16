@@ -12,7 +12,9 @@ class ListView: ZPMustacheUtily {
         let mysql = DataBase()
         
         //增
-//        let resultadd = mysql.addDataBaseWhere(keys: ["TITLE","PID"], values: ["'iOS-Blocks学习'","190116"])
+        let imagStr = "学习"
+        let imagStr_utf8 = imagStr.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let resultadd = mysql.addDataBaseWhere(keys: ["TITLE","PID"], values: ["'\(imagStr_utf8 ?? "")'" ,"190116"])
         
         //查
         var resultArray = [Dictionary<String,String>]()
@@ -26,12 +28,11 @@ class ListView: ZPMustacheUtily {
             
             result.mysqlResult?.forEachRow(callback: { (row) in
                 dic["WEBSITE_PID"] = row[2]//pid
-                let imagStr = String(row[1]!)
-                let imagStr_utf8 = imagStr.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                dic["title"] = imagStr_utf8
-                print("title = \(dic["title"] ?? "") utf8 = \(imagStr_utf8 ?? "")")
-                let model = ZPModel(title: row[1], pid: Int(row[2]!), id: Int(row[0]!))
-                resultModelArray.append(model)
+                let rowStr = String(row[1]!)
+                dic["title"] = rowStr.removingPercentEncoding
+                print("title = \(row[1] ?? "")  \(dic["title"] ?? "")")
+//                let model = ZPModel(title: row[1], pid: Int(row[2]!), id: Int(row[0]!))
+//                resultModelArray.append(model)
                 resultArray.append(dic)
             })
             
