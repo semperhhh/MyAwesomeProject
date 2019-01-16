@@ -28,7 +28,7 @@ class ListView: ZPMustacheUtily {
                 dic["title"] = row[2]
                 dic["WEBSITE_PID"] = row[1]//pid
                 dic["update_time"] = row[7]//最后更新时间
-                print(dic["update_time"] ?? "")
+                print("title = \(dic["title"] ?? "")")
                 let model = ZPModel(title: row[2], pid: Int(row[1]!), id: Int(row[0]!))
                 resultModelArray.append(model)
                 resultArray.append(dic)
