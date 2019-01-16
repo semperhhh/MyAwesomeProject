@@ -27,7 +27,9 @@ class ListView: ZPMustacheUtily {
             result.mysqlResult?.forEachRow(callback: { (row) in
                 dic["title"] = String.init(row[1]!)
                 dic["WEBSITE_PID"] = row[2]//pid
-                print("title = \(dic["title"] ?? "")")
+                let imagStr = "2水电费"
+                let imagStr_utf8 = imagStr.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+                print("title = \(dic["title"] ?? "") utf8 = \(imagStr_utf8 ?? "")")
                 let model = ZPModel(title: row[1], pid: Int(row[2]!), id: Int(row[0]!))
                 resultModelArray.append(model)
                 resultArray.append(dic)
