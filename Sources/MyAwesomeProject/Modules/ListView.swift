@@ -28,7 +28,13 @@ class ListView: ZPMustacheUtily {
             
             result.mysqlResult?.forEachRow(callback: { (row) in
                 dic["WEBSITE_PID"] = row[2]//pid
-                dic["title"] = String(row[1]!)
+                let title = String(row[1]!)
+                dic["title"] = title
+                
+                let data = title.data(using: .utf8)!
+                let bytes = [UInt8](data)
+                print("bytes = \(bytes)")
+                
                 print("title = \(row[1] ?? "")  \(dic["title"] ?? "")")
 //                let model = ZPModel(title: row[1], pid: Int(row[2]!), id: Int(row[0]!))
 //                resultModelArray.append(model)
