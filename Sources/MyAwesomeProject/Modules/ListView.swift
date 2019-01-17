@@ -12,9 +12,9 @@ class ListView: ZPMustacheUtily {
         let mysql = DataBase()
         
         //增
-        let imagStr = "学习"
-        let imagStr_utf8 = imagStr.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-        let resultadd = mysql.addDataBaseWhere(keys: ["TITLE","PID"], values: ["'\(imagStr_utf8 ?? "")'" ,"190116"])
+//        let imagStr = "学习"
+//        let imagStr_utf8 = imagStr.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+//        let resultadd = mysql.addDataBaseWhere(keys: ["TITLE","PID"], values: ["'\(imagStr_utf8 ?? "")'" ,"190116"])
         
         //查
         var resultArray = [Dictionary<String,String>]()
@@ -28,8 +28,7 @@ class ListView: ZPMustacheUtily {
             
             result.mysqlResult?.forEachRow(callback: { (row) in
                 dic["WEBSITE_PID"] = row[2]//pid
-                let rowStr = String(row[1]!)
-                dic["title"] = rowStr.removingPercentEncoding
+                dic["title"] = String(row[1]!)
                 print("title = \(row[1] ?? "")  \(dic["title"] ?? "")")
 //                let model = ZPModel(title: row[1], pid: Int(row[2]!), id: Int(row[0]!))
 //                resultModelArray.append(model)
