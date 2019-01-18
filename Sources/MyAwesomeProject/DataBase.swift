@@ -35,7 +35,7 @@ class DataBase {
     //MARK:开启连接
     private func connectedDataBase() -> Bool {
         
-        mysql.setOption(.MYSQL_SET_CHARSET_NAME, "uft8")
+        mysql.setOption(.MYSQL_SET_CHARSET_NAME, "utf8")
         
         let connected = mysql.connect(host: SQLHost, user: SQLUser, password: SQLPassword, db: SQLDB)
         guard connected else {
