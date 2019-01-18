@@ -41,6 +41,7 @@ routes.add(method: .get, uri: "/") { (_, response) in
 //列表
 routes.add(method: .get, uri: "/list") { (_, response) in
     let list = ListView().getTemplate()
+    response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html;charset=UTF-8")
     response.setBody(string: list)
     response.completed()
 }
