@@ -12,7 +12,7 @@ class MarkHTML {
             let markdown = try String(contentsOfFile: "\(server.documentRoot)/\(TEMPLATES)/\(STATIC)/\(markFile).md")
             
             if let html = markdown.markdownToHTML {
-                //转换失败
+                
                 print("markdownWithHTML html = \(html)")
                 
                 let thisFile = File("\(server.documentRoot)/\(TEMPLATES)/\(POSTS)/\(htmlFile).html")

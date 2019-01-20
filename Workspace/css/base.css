@@ -29,17 +29,17 @@ img.head{
     margin-right: auto;
 }
 div.shadow {
-    box-shadow: 4px 4px 6px rgba(255, 255, 255, 0.6);
+    box-shadow: 4px 4px 6px rgba(255, 255, 255, 0.9);
 }
 div.corner-window {
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.7);
+    border-radius: 1px;
+    background: rgba(200, 200, 200, 0.8);
 }
 div.cell {
     cursor: pointer;
 }
 div.cell:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(200, 200, 200, 0.6);
 }
 /* 导航栏 start*/
 .naviBtn {

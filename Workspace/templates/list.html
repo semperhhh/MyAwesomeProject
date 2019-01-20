@@ -16,7 +16,11 @@
     <style>
         p.title {
             font-size: 22px;
-            font-weight: 500;
+            font-weight: 600;
+        }
+        p.subTitle {
+            font-size:14px;
+            font-weight: 400;
         }
     </style>
 </head>
@@ -32,12 +36,17 @@
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="container-fluid col-md-8">
                         {{#lists}}
-                    <div class="col-md-12 corner-window cell" onclick="location='{{WEBSITE_HOST}}/posts/{{WEBSITE_PID}}'">
+                    <div class="col-md-12 corner-window cell" onclick="location='{{WEBSITE_HOST}}/posts/{{POSTS_PID}}'">
                         <div class="col-md-12" style="height:16px;"></div>
                         <div class="col-md-12">
-                            <p class="title">{{title}}</p>
-                            <p style="font-size:14px;">
-                                <i>最后修改于 :{{updata_time}}</i>
+                            <p class="title">{{POSTS_TITLE}}</p>
+                            <p>
+                                <i>最后修改于 :{{POSTS_UPDATA_TIME}}</i>
+                            </p>
+                            <p>
+                                <i>喜欢 : {{POSTS_LIKEED}}</i>
+                                <i>&nbsp;&nbsp;&nbsp;</i>
+                                <i>阅读 : {{POSTS_READED}}</i>
                             </p>
                         </div>
                         <div class="col-md-12" style="height:16px;"></div>

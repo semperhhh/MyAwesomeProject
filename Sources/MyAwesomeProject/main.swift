@@ -16,7 +16,7 @@ server.documentRoot = "~/Blog/MyAwesomeProject/Workspace"
 #endif
 
 //markdown转html
-MarkHTML().markWithHTML(markFile: "test3", htmlFile: "190116")
+//MarkHTML().markWithHTML(markFile: "test3", htmlFile: "190116")
 
 var routes = Routes()
 
