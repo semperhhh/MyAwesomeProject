@@ -16,17 +16,17 @@ server.documentRoot = "~/Blog/MyAwesomeProject/Workspace"
 #endif
 
 //遍历文件
-let thisStatic = Dir("/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace/templates/static/")
-
-try thisStatic.forEachEntry { (n) in
-    print(n)
-
-//    markdown转html
-    var md: String = n
-    md.removeLast(3)
-
-    MarkHTML().markWithHTML(markFile: md, htmlFile: md)
-}
+//let thisStatic = Dir("/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace/templates/static/")
+//
+//try thisStatic.forEachEntry { (n) in
+//    print(n)
+//
+////    markdown转html
+//    var md: String = n
+//    md.removeLast(3)
+//
+//    MarkHTML().markWithHTML(markFile: md, htmlFile: md)
+//}
 
 
 var routes = Routes()
