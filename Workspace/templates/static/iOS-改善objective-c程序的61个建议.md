@@ -1,8 +1,9 @@
----
-title: iOS-<<改善objective-c程序的61个建议>>(上)
+# iOS-<<改善objective-c程序的61个建议>>(上)
+
 date: 2018-09-18 21:02:15
-tags: iOS
-category: iOS
+pid: 190119
+
+
 ---
 
 <img src="https://blog-1256512148.cos.ap-beijing.myqcloud.com/iOS0004.png" width="300" hegiht="300" align=center />

@@ -15,8 +15,19 @@ server.documentRoot = "/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace"
 server.documentRoot = "~/Blog/MyAwesomeProject/Workspace"
 #endif
 
-//markdown转html
-//MarkHTML().markWithHTML(markFile: "test3", htmlFile: "190116")
+//遍历文件
+let thisStatic = Dir("/Users/zhangpenghui/Desktop/MyAwesomeProject/Workspace/templates/static/")
+
+try thisStatic.forEachEntry { (n) in
+    print(n)
+
+//    markdown转html
+    var md: String = n
+    md.removeLast(3)
+
+    MarkHTML().markWithHTML(markFile: md, htmlFile: md)
+}
+
 
 var routes = Routes()
 
