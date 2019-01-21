@@ -2,7 +2,7 @@
 #if os(macOS)
 let WEBSITE_HOST = "http://127.0.0.1:8181"
 #else
-let WEBSITE_HOST = "www.semperhhh.com"
+let WEBSITE_HOST = "www.semperhhh.con"
 #endif
 
 //模板
