@@ -44,6 +44,7 @@ routes.add(method: .get, uri: "/login/*/detail") { (resquest, response) in
 //首页
 let home = indexView().getTemplate()
 routes.add(method: .get, uri: "/") { (_, response) in
+    print("/home")
     response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html;charset=UTF-8")
     response.setBody(string: home)
     response.completed()
@@ -51,6 +52,7 @@ routes.add(method: .get, uri: "/") { (_, response) in
 
 //列表
 routes.add(method: .get, uri: "/list") { (_, response) in
+    print("/list")
     let list = ListView().getTemplate()
     response.setHeader(HTTPResponseHeader.Name.contentType, value: "text/html;charset=UTF-8")
     response.setBody(string: list)
@@ -60,7 +62,7 @@ routes.add(method: .get, uri: "/list") { (_, response) in
 //帖子页
 let pid = "key"
 routes.add(method: .get, uri: "/posts/{\(pid)}") { (request, response) in
-    
+    print("/pid")
     let fileName = request.urlVariables[pid]!
     print("fileName pid = \(fileName)")
     let postsString = PostsView(pid: Int(fileName) ?? 0).getTemplate()
