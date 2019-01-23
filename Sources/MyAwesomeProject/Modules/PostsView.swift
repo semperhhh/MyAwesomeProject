@@ -20,8 +20,7 @@ class PostsView: ZPMustacheUtily {
         return ["navigationBar":NavigationBarView.html,
                 "WEBSITE_HOST":WEBSITE_HOST,
                 "WEBSITE_PID":self.pid,
-//                "POSTS_CONTENT":PostsContentView.init(pid: self.pid).getTemplate(),
-            "POSTS_CONTENT":markString.markdownToHTML ?? "",
+                "POSTS_CONTENT":PostsContentView.init(pid: self.pid).getTemplate()
         ]
     }
 }
