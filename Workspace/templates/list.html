@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=720px, height=1280px" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>semperhhhの博客</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -41,7 +42,12 @@
                         <div class="col-md-12">
                             <p class="title">{{POSTS_TITLE}}</p>
                             <p>
-                                <i>最后修改于 :{{POSTS_UPDATA_TIME}}</i>
+                                <i>创建于 :{{POSTS_CREATE_TIME}}</i>
+                            </p>
+                            <p>
+                                {{#POSTS_TAG}}
+                                <span class="badge badge-success">{{POSTS_TAG_NAME}}</span>
+                                 {{/POSTS_TAG}}   
                             </p>
                             <p>
                                 <i>喜欢 : {{POSTS_LIKEED}}</i>

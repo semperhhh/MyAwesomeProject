@@ -15,8 +15,8 @@ class ZPMustacheUtily {
         return nil
     }
     
-    //列表字典
-    internal var listObjectSets : [String:Any]? {
+    //列表数组
+    internal var listObjectSets : [[String:Any]]? {
         return nil
     }
     
@@ -29,9 +29,7 @@ class ZPMustacheUtily {
         
         var dic:[String:Any] = mapParam ?? [String:Any]()
         
-        for (key,value) in lists {
-            dic[key] = value
-        }
+        dic["lists"] = lists
         
         return dic
     }
