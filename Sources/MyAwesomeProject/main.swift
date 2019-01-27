@@ -65,7 +65,7 @@ routes.add(method: .get, uri: "/posts/{\(pid)}") { (request, response) in
     print("/pid")
     let fileName = request.urlVariables[pid]!
     print("fileName pid = \(fileName)")
-    let postsString = PostsView(pid: Int(fileName) ?? 0).getTemplate()
+    let postsString = PostsView(titleName: fileName).getTemplate()
     response.appendBody(string: postsString)
     response.completed()
 }
