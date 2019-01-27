@@ -94,8 +94,10 @@ routes.add(method: .get, uri: "/posts/{\(pid)}") { (request, response) in
 //结尾通配符
 
 //检测路径存在
-let thisDir = Dir("./webroot")
+let thisDir = Dir("/root/Blog/MyAwesomeProject/Workspace/templates/static")
 print("路径 \(thisDir.exists)")
+
+print(MarkHTML().markWithHTML(markFile: "iOS-认识锁", htmlFile: "123"))
 
 do {
     server.addRoutes(routes)
