@@ -33,7 +33,7 @@ class ListView: ZPMustacheUtily {
                 
                 //标签
                 do {
-                    let markdown = try String(contentsOfFile: "\(server.documentRoot)/\(TEMPLATES)/\(STATIC)/\(title).md")
+                    let markdown = try String(contentsOfFile: "\(server.documentRoot)/\(TEMPLATES)/\(title).md")
                     
                     let i = markdown.range(of: "---")
                     let sub = markdown[markdown.startIndex..<(i?.lowerBound)!]
@@ -69,7 +69,7 @@ class ListView: ZPMustacheUtily {
                     }
                 } catch {
                     
-                    print("获取markdown error")
+                    print("获取markdown error -- \(error)")
                 }
                 
                 dic["POSTS_TITLE"] = row[1]
