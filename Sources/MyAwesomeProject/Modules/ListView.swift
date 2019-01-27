@@ -35,6 +35,8 @@ class ListView: ZPMustacheUtily {
                 do {
                     let markdown = try String(contentsOfFile: "\(server.documentRoot)/\(TEMPLATES)/\(title).md")
                     
+                    print("markdowm success")
+                    
                     let i = markdown.range(of: "---")
                     let sub = markdown[markdown.startIndex..<(i?.lowerBound)!]
                     let string1 = String(sub)
