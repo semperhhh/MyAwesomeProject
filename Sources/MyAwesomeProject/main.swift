@@ -101,6 +101,10 @@ try thisDir.forEachEntry(closure: {
 })
 print("路径 \(thisDir.exists)")
 
+let markdown = try String(contentsOfFile: "/root/Blog/MyAwesomeProject/Workspace/templates/static/iOS-isa指针.md")
+
+print(markdown)
+
 print(MarkHTML().markWithHTML(markFile: "iOS-认识锁", htmlFile: "123"))
 
 do {
