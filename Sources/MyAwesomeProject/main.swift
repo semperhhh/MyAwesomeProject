@@ -94,18 +94,8 @@ routes.add(method: .get, uri: "/posts/{\(pid)}") { (request, response) in
 //结尾通配符
 
 ////检测路径存在
-//let thisDir = Dir("/root/Blog/MyAwesomeProject/Workspace/templates/static/")
-//try thisDir.forEachEntry(closure: {
-//    n in
-//    print(n)
-//})
-//print("路径 \(thisDir.exists)")
-//
-//let markdown = try String(contentsOfFile: "/root/Blog/MyAwesomeProject/Workspace/templates/static/iOS-isa指针.md")
-//
-//print(markdown)
-//
-//print(MarkHTML().markWithHTML(markFile: "iOS-认识锁", htmlFile: "123"))
+let thisDir = Dir("/root/Blog/MyAwesomeProject/Workspace/templates/static/")
+print("路径 \(thisDir.exists)")
 
 do {
     server.addRoutes(routes)
