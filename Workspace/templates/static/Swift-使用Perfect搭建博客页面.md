@@ -47,15 +47,15 @@ tag: Swift;
 
 <img src="../../images/imgs/190127_02.png" width="300" align=center>
 
+<img src="../../images/imgs/190127_03.png" width="400" align=center>
+
+
+
 ### mustache页面模板
 
 我们的页面虽然有个数据库的支持,但是还是不能按照数据库的条数完全展示,现在我们可以利用mustache模板对前端html页面进行调整,需要在项目中引用``import PerfectMustache``
 
 
-
-### Systemctl服务
-
-<img src="../../images/imgs/190127_03.png" width="400" align=center>
 
 ### buttons和bootstrap
 
