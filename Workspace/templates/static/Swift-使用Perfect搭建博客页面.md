@@ -12,7 +12,9 @@ tag: Swift;
 
 
 
-前段时间听说swift5的改变之一是ABI稳定,现在看的话,swift是值得学习的,于是想通过搭建自己的博客来学习swift,顺便了解后端和mysql,以及前端页面的一些样式
+前段时间听说swift5的改变之一是ABI稳定,现在看的话,swift是值得学习的,于是想通过搭建自己的博客来学习swift,顺便了解后端和mysql,以及前端页面的一些样式.
+
+博客项目放在了[github](https://github.com/semperhhh/MyAwesomeProject),喜欢的可以点赞.
 
 
 
