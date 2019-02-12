@@ -1,7 +1,4 @@
 
-li {
-    list-style: none;/*取消li的小点*/
-}
 body.main_index {
     background: url(../images/background.png);
     background-position: center top;
