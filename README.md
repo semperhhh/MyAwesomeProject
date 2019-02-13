@@ -6,7 +6,9 @@ A description of this package.
     <img src="https://img.shields.io/badge/Database-Mysql-green.svg">
 </p>
 
-作为博客的一个项目,主要是学习swift和认识服务端和mysql  
+作为博客的一个项目,主要是学习swift和认识服务端和mysql
+
+博客地址:www.semperhhh.cn
 
 使用swift的[Perfect框架](https://github.com/PerfectlySoft/Perfect)
 
