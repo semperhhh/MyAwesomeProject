@@ -29,7 +29,7 @@ div.shadow {
     box-shadow: 4px 4px 6px rgba(255, 255, 255, 0.9);
 }
 div.corner-window {
-    border-radius: 1px;
+    border-radius: 10px;
     background: rgba(200, 200, 200, 0.8);
 }
 div.cell {
