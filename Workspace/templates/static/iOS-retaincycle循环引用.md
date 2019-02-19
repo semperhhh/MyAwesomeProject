@@ -7,7 +7,7 @@ tag: iOS;
 
 # iOS-retaincycle循环引用
 
-## retain cycle循环引用
+
 
 循环引用最常出现在block中,一个对象中强引用了block,在block中又强引用了该对象,就会发生循环引用. <!--more-->
 
@@ -16,13 +16,17 @@ tag: iOS;
 	1.事前避免:将该对象使用_weak或者_block修饰符修饰之后再在block中使用;
 	2.时候补救:将其中一方强制置空 xx == nil;
 
+> _block会把在栈上的``外部变量``内存地址放到对中,在block内部也可以修改外部变量的值.
+>
+> 这里说``外部变量``是指栈中的内存地址.
+
 只有当block直接或间接的被self持有时,才需要weakself.如果在block内需要多次访问self,则需要使用strongself.
 
 当 block 本身不被 self 持有，而被别的对象持有，同时不产生循环引用的时候，就不需要使用 weak self 了。最常见的代码就是 UIView 的动画代码，我们在使用 UIView 的 animateWithDuration:animations 方法 做动画的时候，并不需要使用 weak self，因为引用持有关系是：
 
 * UIView 的某个负责动画的对象持有了 block 
 * block 持有了 self 
-* 因为 self 并不持有 block，所以就没有循环引用产生，因为就不需要使用 weak self 了。
+* 因为 self 并不持有 block，所以就没有循环引用产生，就不需要使用 weak self 。
 
 ~~~~objective-c
 [UIView animateWithDuration:0.2 animations:^{
@@ -87,3 +91,64 @@ a 在定义前是栈区，但只要进入了 block 区域，就变成了堆区�
 #### 更新
 看到一篇文章,retainCount方法不是准确的,链接放上来[bbum的weblog-o-mat](http://www.friday.com/bbum/2011/12/18/retaincount-is-useless/) 
 需要翻墙
+
+
+
+#### 补充
+
+
+
+> block为什么要用copy修饰
+
+这个其实是在MRC下,block是被放在栈上面的,我们知道栈是系统管理的, 那么就有可能提前释放block,所以将block拷贝到堆上.
+
+在ARC下系统会帮我们做这个操作,但是也有的地方是不帮我们copy到堆上的,比方说在NSArray的``initwithobjects``中传递block的时候.
+
+
+
+> 修饰词copy和strong的区别
+
+copy修饰的不可变如NSString,copy可以保证NSString是不可变的.
+
+如果使用strong,那么这个属性就有可能指向一个可变对象,如果可变对象在外部被修改了,就会影响该属性.
+
+而NSMutableString使用copy则改变了它可变的性质.
+
+
+
+> copy的使用
+
+| 原对象 | 拷贝方法    | 拷贝方式 | 生成的对象 |
+| :----- | :---------- | -------- | ---------- |
+| 不可变 | copy        | 浅拷贝   | 不可变     |
+| 不可变 | mutableCopy | 深拷贝   | 可变       |
+| 可变   | copy        | 深拷贝   | 不可变     |
+| 可变   | mutableCopy | 深拷贝   | 可变       |
+
+用copy修饰的或者赋值的变量肯定是不可变的.
+
+用copy赋值,要看源对象是否是可变的,来决定只拷贝指针,还是也拷贝对象到另一块内存空间.
+
+
+
+> strong和weak的区别
+
+weak常用于弱引用,可以防止多次强引用对象造成循环引用.
+
+strong能够持有对象,一个对象只有有其他的持有就不会被释放.
+
+
+
+> weak的实现
+
+weak是基于runtime维护的一个哈希表,是以对象的地址为key,对象的weak指针为value的.
+
+当对象不再被强引用,也就是retaincount为0的时候释放对象,同时runtime根据key遍历value并置为nil.
+
+
+
+> weak和assign的区别
+
+weak只能修饰oc对象,weak可以置为nil.
+
+assign可以修饰基本数据类型.

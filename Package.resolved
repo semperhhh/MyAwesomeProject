@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "COpenSSL",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL.git",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-COpenSSL-Linux.git",
         "state": {
           "branch": null,
-          "revision": "25b0226e808c11111428b5b2c1618bfd84c59130",
+          "revision": "413c7a3c42233fb96115f1b59745ddf21cb52733",
           "version": "3.2.0"
         }
       },
@@ -74,6 +74,15 @@
         }
       },
       {
+        "package": "LinuxBridge",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-LinuxBridge.git",
+        "state": {
+          "branch": null,
+          "revision": "d6e64c48e6b06b6f1ab7ab9338280447baa8ca5c",
+          "version": "3.1.0"
+        }
+      },
+      {
         "package": "PerfectLogger",
         "repositoryURL": "https://github.com/PerfectlySoft/Perfect-Logger.git",
         "state": {
@@ -111,10 +120,10 @@
       },
       {
         "package": "mysqlclient",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-mysqlclient.git",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-mysqlclient-Linux.git",
         "state": {
           "branch": null,
-          "revision": "afec636bfa3302ea155f462f139da46a53fd351a",
+          "revision": "5401a4713557237baabaef1caea93467cf5af138",
           "version": "2.1.0"
         }
       },
