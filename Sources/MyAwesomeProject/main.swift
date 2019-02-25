@@ -70,6 +70,15 @@ routes.add(method: .get, uri: "/posts/{\(pid)}") { (request, response) in
     response.completed()
 }
 
+//关于
+let about = AboutView().getTemplate()
+routes.add(method: .get, uri: "/about") { (request, response) in
+    print("/about")
+    response.setHeader(.contentType, value: "text/html;charset=UTF-8")
+    response.setBody(string: about)
+    response.completed()
+}
+
 ////首页
 //routes.add(method: .get, uri: "/") { (request, response) in
 //
