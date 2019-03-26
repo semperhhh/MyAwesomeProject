@@ -12,7 +12,7 @@ let package = Package(
         .package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", from: "3.0.0"),
         .package(url: "https://github.com/PerfectlySoft/Perfect-MySQL.git", from: "3.0.0"),
         .package(url: "https://github.com/PerfectlySoft/Perfect-Mustache.git", from: "3.0.0"),
-        .package(url: "https://github.com/PerfectlySoft/Perfect-Logger.git", from: "3.0.0"),
+//        .package(url: "https://github.com/PerfectlySoft/Perfect-Logger.git", from: "3.0.0"),
         .package(url: "https://github.com/PerfectlySoft/Perfect-Markdown.git", from: "3.0.0"),
 //        .package(url: "https://github.com/iamjono/SwiftString.git", from: "2.0.0"),
     ],
@@ -21,7 +21,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "MyAwesomeProject",
-            dependencies: ["PerfectHTTPServer", "PerfectMySQL", "PerfectMustache", "PerfectLogger", "PerfectMarkdown"]),
+            dependencies: ["PerfectHTTPServer", "PerfectMySQL", "PerfectMustache", "PerfectMarkdown"]),
         .testTarget(
             name: "MyAwesomeProjectTests",
             dependencies: ["MyAwesomeProject"]),

@@ -29,15 +29,6 @@
         }
       },
       {
-        "package": "PerfectCURL",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-CURL.git",
-        "state": {
-          "branch": null,
-          "revision": "a9f8950554585bd12b9ec24ad4bfbe0b1519e03f",
-          "version": "3.1.0"
-        }
-      },
-      {
         "package": "PerfectCZlib",
         "repositoryURL": "https://github.com/PerfectlySoft/Perfect-CZlib-src.git",
         "state": {
@@ -62,24 +53,6 @@
           "branch": null,
           "revision": "49981001cd6ac7c9e19ea06e3a94a58e8b2b3f98",
           "version": "3.0.19"
-        }
-      },
-      {
-        "package": "cURL",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-libcurl.git",
-        "state": {
-          "branch": null,
-          "revision": "b3d7e65ef5c27c0a027cdc621f34835975301bf1",
-          "version": "2.1.0"
-        }
-      },
-      {
-        "package": "PerfectLogger",
-        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-Logger.git",
-        "state": {
-          "branch": null,
-          "revision": "00bd1cf9d01657c73d7b3d27d5cc6437cc583f39",
-          "version": "3.1.0"
         }
       },
       {
