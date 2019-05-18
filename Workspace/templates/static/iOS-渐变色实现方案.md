@@ -1,5 +1,5 @@
 pid: 190516;
-
+category: iOS;
 ---
 
 
@@ -30,6 +30,7 @@ CAGradientLayout是方便常用的.
 
 ### Core Graphics
 使用Core Graphics画一个渐变的图片,添加图片为背景图片
+
 ````objective-c
 
 typedef NS_ENUM(NSInteger, GradientType) {
