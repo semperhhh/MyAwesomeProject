@@ -10,7 +10,7 @@ tag: iOS;
 
 > 目标是画出一个带阴影的圆角图片
 
-![目标图片](/Users/zhangpenghui/Desktop/屏幕快照 2019-05-30 下午9.12.25.png)
+<img src="../../images/imgs/190604/190604_01.png" width="300" align=center>
 
 在layer的实际使用中,layer加了圆角后就不可以加阴影了,因为圆角的裁剪出来的,view被裁剪的时候就把阴影的部分裁掉了.
 
