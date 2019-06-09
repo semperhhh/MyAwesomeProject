@@ -70,6 +70,22 @@ routes.add(method: .get, uri: "/posts/{\(pid)}") { (request, response) in
     response.completed()
 }
 
+//帖子点击喜欢
+routes.add(method: .get, uri: "/posts/likeClick/**") { (request, response) in
+    
+    print("likeClick")
+    //查找数据库对应喜欢数+1
+    response.completed()
+}
+
+//帖子点击打赏
+routes.add(method: .get, uri: "/posts/rewardClick/**") { (request, response) in
+    
+    print("rewardClick")
+    //查找数据库对应点赞数+1
+    response.completed()
+}
+
 //关于
 let about = AboutView().getTemplate()
 routes.add(method: .get, uri: "/about") { (request, response) in
