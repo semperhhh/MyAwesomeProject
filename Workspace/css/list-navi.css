@@ -1,3 +1,5 @@
+/* 列表导航css */
+
 /* 列表字体 */
 p.title {
     font-size: 22px;
@@ -20,7 +22,7 @@ p.subTitle {
         position: fixed;
         width: 220px;
     }
-    li {
+    .navi li {
         padding-top: 15px;
         margin-left: -20px;
         height: 50px;
@@ -30,7 +32,7 @@ p.subTitle {
     .navi {
         display: inline;
     }
-    li {
+    .navi li {
         display: inline;
         padding-top: 15px;
     }
