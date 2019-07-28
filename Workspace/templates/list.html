@@ -14,16 +14,8 @@
     <link rel="stylesheet" href="../css/buttons.css">
     <!-- 只有使用字体图标时才需要加载 Font-Awesome -->
     <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <style>
-        p.title {
-            font-size: 22px;
-            font-weight: 600;
-        }
-        p.subTitle {
-            font-size:14px;
-            font-weight: 400;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/list-navi.css">
+    <script src="../js/list-navi.js"></script>
 </head>
 
 <body class="main_index">
@@ -31,11 +23,28 @@
         {{{navigationBar}}} 
 
         <!-- list -->
-        <div class="list-background">
+        <div class="list-background container-fluid">
             <div style="height:80px;"></div>
-            <div class="list-piece">
+            <div class="content">
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-                <div class="container-fluid col-md-8 center-block">
+
+                <!-- 分区导航 -->
+                <div class="col-md-3 navi navi-window">
+                    <ul>
+                        <li>
+                            <button class="button button-glow button-rounded button-raised button-primary" onclick="jishuAction()">技术乱写</button>
+                        </li>
+                        <li>
+                            <button class="button button-glow button-rounded button-raised button-primary" onclick="richangAction()">日常瞎记</button>
+                        </li>
+                        <li>
+                            <button class="button button-glow button-rounded button-raised button-primary" onclick="pingshiAction()">平时幻想</button>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 列表 -->
+                <div class="col-md-8 list">
                         {{#lists}}
                     <div class="col-md-12 corner-window cell" onclick="location='{{WEBSITE_HOST}}/posts/{{POSTS_TITLE}}'">
                         <div class="col-md-12" style="height:16px;"></div>
